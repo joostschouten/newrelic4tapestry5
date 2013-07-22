@@ -6,7 +6,7 @@
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>NewRelic4Tapestry5</name>
-	<url>http://www.pdfmypage.com/</url>
+	<url>https://github.com/joostschouten/newrelic4tapestry5</url>
 
 	<properties>
 		<apache.tapestry.version>5.3.6</apache.tapestry.version>
