@@ -10,4 +10,4 @@ Out of the box New relic will only capture the [Tapestry Filter](http://tapestry
 The locale, request parameters and context parameters are stripped to allow for meaningfull performance monitoring of your pages and components.
 
 A generic [MarkupRendererFilter](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/services/MarkupRendererFilter.html) is used to add [Real User Monitoring](https://newrelic.com/docs/features/real-user-monitoring)
-to each pagerequest to also tracking your page loading and dom evaluation.
+to each pagerequest to also track your page loading and dom evaluation.
