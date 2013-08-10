@@ -5,7 +5,7 @@ This Tapestry 5 Module will add [Real User Monitoring](https://newrelic.com/docs
 properly named [Web Transactions](https://newrelic.com/docs/applications-dashboards/web-transactions) to your 
 [New Relic](http://www.newrelic.com) monitored [Tapestry5](http://tapestry.apache.org) application. 
 
-Out of the box New relic will only capture the [Tapestry Filter](http://tapestry.apache.org/request-processing.html#RequestProcessing-TapestryFilter) for every request. 
+Out of the box New Relic will only capture the [Tapestry Filter](http://tapestry.apache.org/request-processing.html#RequestProcessing-TapestryFilter) for every request. 
 [NewRelic4Tapestry5](https://github.com/joostschouten/newrelic4tapestry5) will track the correct page and event name for every request. 
 The locale, request parameters and context parameters are stripped to allow for meaningfull performance monitoring of your pages and components.
 
@@ -15,7 +15,7 @@ to each pagerequest to also track your page loading and dom evaluation.
 Usage
 ===
 
-Include NewRelic4Tapestry5 in your dependencies
+Include [NewRelic4Tapestry5](https://github.com/joostschouten/newrelic4tapestry5) in your [Maven](http://maven.apache.org) dependencies
 ```
 <dependency>
 	<groupId>com.jsportal</groupId>
