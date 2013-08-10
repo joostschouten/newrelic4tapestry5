@@ -24,7 +24,7 @@ Include NewRelic4Tapestry5 in your dependencies
 </dependency>
 ```
 
-To include it in your own tapestry project simply add the NewRelic4Tapestry5AppModule as a @SubModule to your own Tapestry AppModule like so:
+To include it in your own tapestry project simply add the [NewRelic4Tapestry5AppModule](https://github.com/joostschouten/newrelic4tapestry5/blob/master/src/main/java/com/jsportal/newrelic4tapestry5/services/NewRelic4Tapestry5AppModule.java) as a [@SubModule](http://tapestry.apache.org/current/apidocs/index.html?org/apache/tapestry5/javadoc/package-summary.html) to your own [Tapestry AppModule](http://tapestry.apache.org/configuration.html#Configuration-YourApplication%27sModuleClass) like so:
 
 ```
 @SubModule({NewRelic4Tapestry5AppModule.class})
