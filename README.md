@@ -16,15 +16,19 @@ Usage
 ===
 
 Include NewRelic4Tapestry5 in your dependencies
+```
 <dependency>
 	<groupId>com.jsportal</groupId>
 	<artifactId>NewRelic4Tapestry5</artifactId>
 	<version>1.0-SNAPSHOT</version>
 </dependency>
+```
 
 To include it in your own tapestry project simply add the NewRelic4Tapestry5AppModule as a @SubModule to your own Tapestry AppModule like so:
 
+```
 @SubModule({NewRelic4Tapestry5AppModule.class})
 public class YourAppModule {
 	... your AppModule code ...
 }
+```
