@@ -1,4 +1,4 @@
-package com.joostschouten.newrelic4tapestry5.services;
+package com.jsportal.newrelic4tapestry5.services;
 
 import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
@@ -18,7 +18,7 @@ public class NewRelic4Tapestry5AppModule {
 	}
 	
 	public void contributeComponentClassResolver(Configuration<LibraryMapping> config) {
-		config.add(new LibraryMapping(MODULE_PREFIX, "com.joostschouten.newrelic4tapestry5"));
+		config.add(new LibraryMapping(MODULE_PREFIX, "com.jsportal.newrelic4tapestry5"));
 	}
 	
 	public void contributeMarkupRenderer(OrderedConfiguration<MarkupRendererFilter> configuration) {

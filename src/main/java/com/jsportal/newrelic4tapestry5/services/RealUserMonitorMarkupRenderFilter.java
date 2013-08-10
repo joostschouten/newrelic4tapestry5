@@ -1,4 +1,4 @@
-package com.joostschouten.newrelic4tapestry5.services;
+package com.jsportal.newrelic4tapestry5.services;
 
 import org.apache.tapestry5.MarkupWriter;
 import org.apache.tapestry5.dom.Document;
@@ -41,7 +41,7 @@ public class RealUserMonitorMarkupRenderFilter implements MarkupRendererFilter {
 			}
 			else {				
 				String rawFooter = NewRelic.getBrowserTimingFooter();
-				Element footerElement = headElement
+				Element footerElement = bodyElement
 						.element("script", "type", "text/javascript")
 						.raw(clearScriptTags(rawFooter));
 				footerElement.moveToBottom(bodyElement);

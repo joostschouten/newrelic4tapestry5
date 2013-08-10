@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.joostschouten</groupId>
+	<groupId>com.jsportal</groupId>
 	<artifactId>NewRelic4Tapestry5</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
@@ -12,13 +12,13 @@
 		<apache.tapestry.version>5.3.6</apache.tapestry.version>
 		<newrelic.version>2.21.2</newrelic.version>
 	</properties>
-	
+
 	<repositories>
 		<repository>
 			<id>newrelic</id>
 			<name>newrelic</name>
 			<url>http://download.newrelic.com/</url>
-		</repository>	
+		</repository>
 	</repositories>
 
 
@@ -34,7 +34,7 @@
 			<artifactId>tapestry-xpath</artifactId>
 			<version>1.0.1</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>newrelic.java-agent</groupId>
 			<artifactId>newrelic-api</artifactId>
@@ -47,5 +47,27 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tapestry</groupId>
+			<artifactId>tapestry-test</artifactId>
+			<version>${apache.tapestry.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sourceforge.tapestryxpath</groupId>
+			<artifactId>tapestry-xpath</artifactId>
+			<version>1.0.1</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
+
 </project>
