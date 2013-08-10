@@ -42,12 +42,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>jaxen</groupId>
-			<artifactId>jaxen</artifactId>
-			<version>1.1.1</version>
-		</dependency>
-
-		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
@@ -66,13 +60,12 @@
 			<artifactId>tapestry-test</artifactId>
 			<version>${apache.tapestry.version}</version>
 			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>net.sourceforge.tapestryxpath</groupId>
-			<artifactId>tapestry-xpath</artifactId>
-			<version>1.0.1</version>
-			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.testng</groupId>
+					<artifactId>testng</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 	</dependencies>
