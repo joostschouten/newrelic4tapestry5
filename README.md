@@ -11,3 +11,20 @@ The locale, request parameters and context parameters are stripped to allow for 
 
 A generic [MarkupRendererFilter](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/services/MarkupRendererFilter.html) is used to add [Real User Monitoring](https://newrelic.com/docs/features/real-user-monitoring)
 to each pagerequest to also track your page loading and dom evaluation.
+
+Usage
+===
+
+Include NewRelic4Tapestry5 in your dependencies
+<dependency>
+	<groupId>com.jsportal</groupId>
+	<artifactId>NewRelic4Tapestry5</artifactId>
+	<version>1.0-SNAPSHOT</version>
+</dependency>
+
+To include it in your own tapestry project simply add the NewRelic4Tapestry5AppModule as a @SubModule to your own Tapestry AppModule like so:
+
+@SubModule({NewRelic4Tapestry5AppModule.class})
+public class YourAppModule {
+	... your AppModule code ...
+}
