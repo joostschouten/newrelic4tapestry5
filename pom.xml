@@ -11,14 +11,14 @@
 	<groupId>com.jsportal</groupId>
 	<artifactId>NewRelic4Tapestry5</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>0.1-SNAPSHOT</version>
 
 	<name>NewRelic4Tapestry5</name>
 	<url>https://github.com/joostschouten/newrelic4tapestry5</url>
 
 	<properties>
 		<apache.tapestry.version>5.3.6</apache.tapestry.version>
-		<newrelic.version>2.21.2</newrelic.version>
+		<newrelic.version>3.2.1</newrelic.version>
 	</properties>
 
 	<scm>
@@ -60,16 +60,24 @@
 			<groupId>org.apache.tapestry</groupId>
 			<artifactId>tapestry-core</artifactId>
 			<version>${apache.tapestry.version}</version>
+			<scope>provided</scope>
 		</dependency>
+
 
 		<dependency>
 			<groupId>net.sourceforge.tapestryxpath</groupId>
 			<artifactId>tapestry-xpath</artifactId>
 			<version>1.0.1</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.newrelic.agent.java</groupId>
+			<artifactId>newrelic-agent</artifactId>
+			<version>${newrelic.version}</version>
+		</dependency>
 
 		<dependency>
-			<groupId>newrelic.java-agent</groupId>
+			<groupId>com.newrelic.agent.java</groupId>
 			<artifactId>newrelic-api</artifactId>
 			<version>${newrelic.version}</version>
 		</dependency>

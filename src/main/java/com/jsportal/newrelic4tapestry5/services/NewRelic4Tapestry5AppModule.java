@@ -3,9 +3,11 @@ package com.jsportal.newrelic4tapestry5.services;
 import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.annotations.Contribute;
+import org.apache.tapestry5.services.ComponentClassResolver;
 import org.apache.tapestry5.services.ComponentRequestFilter;
 import org.apache.tapestry5.services.ComponentRequestHandler;
 import org.apache.tapestry5.services.LibraryMapping;
+import org.apache.tapestry5.services.MarkupRenderer;
 import org.apache.tapestry5.services.MarkupRendererFilter;
 
 public class NewRelic4Tapestry5AppModule {
@@ -17,16 +19,19 @@ public class NewRelic4Tapestry5AppModule {
 		configuration.addInstance("NewRelicWebTransactionsRequestFilter", WebTransactionsRequestFilter.class, "after:*");
 	}
 	
+	@Contribute(ComponentClassResolver.class)
 	public void contributeComponentClassResolver(Configuration<LibraryMapping> config) {
 		config.add(new LibraryMapping(MODULE_PREFIX, "com.jsportal.newrelic4tapestry5"));
 	}
 	
+	@Contribute(MarkupRenderer.class)
 	public void contributeMarkupRenderer(OrderedConfiguration<MarkupRendererFilter> configuration) {
-        MarkupRendererFilter realUserMonitorMarkupHeaderRenderFilter = new RealUserMonitorMarkupRenderFilter(true);
-        configuration.add("realUserMonitorMarkupHeaderRenderFilter", realUserMonitorMarkupHeaderRenderFilter, "before:*");
+		MarkupRendererFilter realUserMonitorMarkupHeaderRenderFilter = new RealUserMonitorMarkupRenderFilter(true);
+		configuration.add("realUserMonitorMarkupHeaderRenderFilter", realUserMonitorMarkupHeaderRenderFilter, "after:*");
 
-        MarkupRendererFilter realUserMonitorMarkupFooterRenderFilter = new RealUserMonitorMarkupRenderFilter(false);
-        configuration.add("realUserMonitorMarkupFooterRenderFilter", realUserMonitorMarkupFooterRenderFilter, "after:*");
+		MarkupRendererFilter realUserMonitorMarkupFooterRenderFilter = new RealUserMonitorMarkupRenderFilter(false);
+		configuration.add("realUserMonitorMarkupFooterRenderFilter", realUserMonitorMarkupFooterRenderFilter, "after:realUserMonitorMarkupHeaderRenderFilter");
+
     }
 	
 	
