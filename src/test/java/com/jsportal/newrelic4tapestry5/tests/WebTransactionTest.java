@@ -1,29 +1,35 @@
 package com.jsportal.newrelic4tapestry5.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import org.apache.tapestry5.dom.Document;
 import org.apache.tapestry5.dom.Element;
+import org.apache.tapestry5.ioc.services.SymbolSource;
 import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.test.PageTester;
 import org.jaxen.JaxenException;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
-import com.formos.tapestry.xpath.TapestryXPath;
+import com.formos.tapestry.testify.core.ForComponents;
+import com.jsportal.newrelic4tapestry5.services.NewRelic4Tapestry5AppModule;
 import com.jsportal.newrelic4tapestry5.services.WebTransactionsRequestFilter;
-import com.newrelic.api.agent.NewRelic;
 
 public class WebTransactionTest {
 	
 	private Document doc;
 	private PageTester tester;
-
+	String appPackage = "com.jsportal.newrelic4tapestry5";
+	String appName = "NewRelic4Tapestry5App";
+	
 	@Before
 	public void setupPage() {
-		String appPackage = "com.jsportal.newrelic4tapestry5";
-        String appName = "NewRelic4Tapestry5App";
         tester = new PageTester(appPackage, appName, "src/main/webapp");
 	}
 	
