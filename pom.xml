@@ -73,6 +73,7 @@
 		<dependency>
 			<groupId>com.newrelic.agent.java</groupId>
 			<artifactId>newrelic-agent</artifactId>
+			<scope>provided</scope>
 			<version>${newrelic.version}</version>
 		</dependency>
 

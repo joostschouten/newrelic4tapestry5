@@ -17,28 +17,22 @@ import org.apache.tapestry5.services.Request;
 @Scope(value = ScopeConstants.PERTHREAD)
 public class WebTransactionsRequestFilter implements ComponentRequestFilter {
 	
-	public static final String NEWRELIC_AGENT_TRANSACTION_KEY = "com.newrelic.agent.TRANSACTION_NAME";
-	private Request request;
+	private NewRelicTransactionService newRelicTransactionService;
 	
-	public WebTransactionsRequestFilter(final Request request) 
+	public WebTransactionsRequestFilter(NewRelicTransactionService newRelicTransactionService) 
 				throws ClassNotFoundException{
-		this.request = request;
+		this.newRelicTransactionService = newRelicTransactionService;
 	}
 
 	public void handleComponentEvent(ComponentEventRequestParameters parameters, ComponentRequestHandler handler)
 			throws IOException {
-		if(request.getAttribute(NEWRELIC_AGENT_TRANSACTION_KEY) == null) {			
-			request.setAttribute(NEWRELIC_AGENT_TRANSACTION_KEY, parameters.getActivePageName() + "." + parameters.getNestedComponentId());
-		}
+		newRelicTransactionService.setTransactionName(parameters.getActivePageName() + "." + parameters.getNestedComponentId());
 		handler.handleComponentEvent(parameters);
-		
 	}
 
 	public void handlePageRender(PageRenderRequestParameters parameters, ComponentRequestHandler handler)
 			throws IOException {
-		if(request.getAttribute(NEWRELIC_AGENT_TRANSACTION_KEY) == null) {			
-			request.setAttribute(NEWRELIC_AGENT_TRANSACTION_KEY, parameters.getLogicalPageName());
-		}
+		newRelicTransactionService.setTransactionName(parameters.getLogicalPageName());
 		handler.handlePageRender(parameters);
 	}
 

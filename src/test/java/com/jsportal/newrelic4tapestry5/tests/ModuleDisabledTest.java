@@ -22,6 +22,7 @@ import org.mockito.MockitoAnnotations;
 import com.formos.tapestry.testify.core.ForComponents;
 import com.formos.tapestry.xpath.TapestryXPath;
 import com.jsportal.newrelic4tapestry5.services.NewRelic4Tapestry5AppModule;
+import com.jsportal.newrelic4tapestry5.services.NewRelicTransactionService;
 import com.jsportal.newrelic4tapestry5.services.WebTransactionsRequestFilter;
 import com.newrelic.api.agent.NewRelic;
 
@@ -53,7 +54,7 @@ public class ModuleDisabledTest {
 	@Test
 	public void testModuleDisabled_transactionKey() throws JaxenException {
 		Request request = tester.getRegistry().getService("testableRequest", Request.class);
-		String webTransactionName = (String) request.getAttribute(WebTransactionsRequestFilter.NEWRELIC_AGENT_TRANSACTION_KEY);
+		String webTransactionName = (String) request.getAttribute(NewRelicTransactionService.NEWRELIC_AGENT_TRANSACTION_KEY);
 		assertNull(webTransactionName);
 	}
 	
